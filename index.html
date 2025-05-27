@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+     <head> <!--tag méta dados-->
+        <link rel="stylesheet" href="style.css">
+        <title>Quiz matematica basica</title>
+        <meta name="description" content="um quiz interativo para testar seus conhecimentos em matematica">
+     </head>
+    <body> <!--tag parte visual-->
+        <header>
+            <!--cabeçalho-->
+            <h1>Quiz interativo para alunos de matemática</h1>
+            <p>Teste seus conhecimentos em matemática e veja qual pontuação você consegue fazer!</p>
+        </header>
+        <main> <!--tag conteúdo principal-->
+            <!--Essa seção é para a introdução-->
+            <section>
+                <h2>Sobre esse quiz</h2>
+                <p>Este quiz foi desenvolvido para testar seus conhecimentos em matemática básica, e é composto por uma série de perguntas envolvendo conceitos básicos de <strong>aritmética, algebra e geometria</strong></p>
+                <p>você ira relembrar o conceito de <abbr title="minimo multiplo comum">MMC</abbr> <abbr title="máximo divisor comum">MDC</abbr> dentre outros conceitos básicos de operações numéricas fundamentais na aritmética</p>
+                <p>Você ira responder o maximo de perguntas que conseguir a respeito de cada <em>conceito matemático</em> e ao final verá qual a sua pontuação e nivel de conhecimento em matemática</p>
+            </section>
+            <!--perguntas-->
+            <section>
+                <!--pergunta multipla escolha 1-->
+                <h2>Pergunta 1: Quais são os dez primeiros números primos?</h2>
+                <form >
+                    <input type="radio" value="1;3;5;7;11;13;17;19;23;27" id="p1a" name="pergunta 1">
+                    <label for="p1a">1;3;5;7;11;13;17;19;23;27</label><br>
+                    <input type="radio" value="1;3;5;7;11;13;17;19;23;27" id="p1b" name="pergunta 1">
+                    <label for="p1b">1;3;5;7;12;13;17;19;23;27</label><br>
+                    <input type="radio" value="1;3;5;7;11;13;17;21;23;27" id="p1c" name="pergunta 1">
+                    <label for="p1c">1;3;5;7;12;13;17;21;23;27</label><br>
+                </form>
+            </section>
+            <section>
+                <!--pergunta texto 2-->
+                <h2>Pergunta 2:91 é um numero primo?explique.</h2>
+                <form >
+                    <input type="text" id="p2" name="pergunta 2" placeholder="digite aqui sua resposta">
+                </form>
+            </section>
+            <!--Pergunta seleção multipla 3-->
+            <h2>Pergunta 3: Qual é o <abbr title="Minimo Multiplo Comum">MMC</abbr> entre o numero 3 e o 21</h2>
+            <form>
+                <input type="checkbox" id="p3a" name="pergunta3" value="24">
+                <label for="p3a">24</label><br>
+                <input type="checkbox" id="p3b" name="pergunta3" value="33">
+                <label for="p3b">33</label><br>
+                <input type="checkbox" id="p3c" name="pergunta3" value="42">
+                <label for="p3c">42</label><br>
+            </form>
+            <section>
+                <!--pergunta 4 com imagem-->
+                <h2> Pergunta 4: qual equação melhor representa o grafico a seguir?</h2>
+                <img src="./assets/Captura de tela 2025-04-19 150217.png" alt="">
+                <!--respostas em espressões algébricas-->
+                <form> 
+                    <input type="radio" value="Equação: x<sup>2</sup> + 2x - 4 " id="p4a" name="pergunta 4">
+                    <label for="p4a">Equação: x<sup>2</sup> + 2x + 4</label><br>
+                    <input type="radio" value="Equação: x<sup>2</sup> + 2x - 4" id="p1c" name="pergunta 4">
+                    <label for="p1c">Equação: x<sup>2</sup> + 2x - 4</label><br>
+                    <input type="radio" value="Equação: x<sup>2</sup> + 2x - 4" id="p1c" name="pergunta 4">
+                    <label for="p1c">Equação: x<sup>2</sup> + x + 4</label><br>
+                </form>  
+            </section>
+            <!--Tabela de pontuação-->
+        <section>
+            <h2>Tabela de Pontuação</h2>
+            <table border="1"> <!--tag para criar tabela-->
+                <thead> <!--cabeçalho de tabela-->
+                    <th>Pontuação</th>
+                    <th>Avaliação</th>
+                </thead>
+                <tr> <!--tag cédula da tabela-->
+                    <td>0-2</td>
+                    <td>Não desista! Cada tentativa é uma oportunidade de você aprender</td>
+                </tr>
+                <tr>
+                    <td>3-6</td>
+                    <td>Parabéns! você foi bem mas pode melhorar</td>
+                </tr>
+                 <tr>
+                    <td>7-10</td>
+                    <td>Parabéns! você é incrivel</td>
+                </tr>
+            </table>
+        </section>
+        <!--lista de respostas-->
+        <section>
+            <h2>verifique suas respostas</h2>
+            <details> <!--tag para esconder informações-->
+            <summary>Clique aqui para ver as respostas</summary>
+            <ol>
+                <li>1;3;5;7;11;13;17;19;23;27</li>
+                <li>Não, pois é divisivel por 7 além de 1 e 91</li>
+                <li>Equação: x<sup>2</sup> + 2x - 4</li>
+            </ol>
+            </details>
+            </section>
+            <!--Formulário de Feedback-->
+            <section>
+                <h2>Nos dê o seu feedback</h2>
+                <fieldset> <!--tag borda do formulario-->
+                    <legend>informações de contato</legend><!--tag de legenda-->
+                <form> <!--tag para formulario-->
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="email">email:</label>
+                    <input type="email" id="email" name="email"><br>
+                    <!--tags e atributos para caixa de texto-->
+                    <label for="comentario">comentario</label><br>
+                    <textarea id="comentarios" 
+                    name="comentarios" rows="4" cols="50"
+                    placeholder="Digite seus comentários aqui"></textarea>
+                    <button onclick="alert('Feeedback enviado')">Envie o seu feedback</button>
+                </form>
+                </fieldset>
+            </section>
+        </main>
+        <footer> <!--rodapé-->
+            <p>Quiz de programação. Todos os direitos reservados.</p>
+            <p>Para conhecer outros quizzes <a href="https://google.com" target="_blank">clique aqui.</a> </p>
+        </footer>
+    </body>
+</html>

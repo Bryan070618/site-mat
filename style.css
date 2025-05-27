@@ -1,0 +1,153 @@
+/* RESET BÁSICO - remove margens e espaçamentos padrão dos navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ESTILO GERAL DO CORPO DA PÁGINA */
+body {
+  font-family: Arial, sans-serif; /* Define a fonte */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  background: #f9f9f9; /* Cor de fundo clara */
+  color: #333; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+}
+
+/* CABEÇALHO */
+header {
+  background: #004080; /* Cor azul escuro */
+  color: white; /* Texto branco */
+  padding: 20px;
+  text-align: center; /* Centraliza o conteúdo */
+  border-radius: 8px; /* Cantos arredondados */
+  margin-bottom: 20px; /* Espaço abaixo do cabeçalho */
+}
+
+header h1 {
+  font-size: 2em; /* Tamanho maior do título */
+  margin-bottom: 10px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+  max-width: 900px; /* Largura máxima */
+  margin: auto; /* Centraliza horizontalmente */
+  background: white; /* Fundo branco */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra leve ao redor */
+}
+
+/* SEÇÕES DO CONTEÚDO */
+section {
+  margin-bottom: 30px; /* Espaço entre seções */
+}
+
+section h2 {
+  margin-bottom: 10px;
+  color: #004080; /* Azul escuro */
+}
+
+/* FORMULÁRIOS */
+form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para opções de rádio e checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* CAMPOS DE TEXTO E EMAIL */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Ocupa toda a largura disponível */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* BOTÃO */
+button {
+  background: #004080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+button:hover {
+  background: #002f5f; /* Tom mais escuro ao passar o mouse */
+}
+
+/* TABELA DE PONTUAÇÃO */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* CÉLULAS DA TABELA */
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+/* CABEÇALHO DA TABELA */
+table th {
+  background: #004080;
+  color: white;
+}
+
+/* DETALHES COM "VER RESPOSTAS" */
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+ol {
+  padding-left: 20px; /* Recuo da lista */
+}
+
+/* FORMULÁRIO DE FEEDBACK */
+fieldset {
+  border: 2px solid #004080;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  color: #004080;
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+footer a {
+  color: #004080;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
