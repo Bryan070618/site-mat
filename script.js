@@ -104,6 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let banco = JSON.parse(localStorage.getItem('quizResultados') || '{}');
     banco[email] = resultado;
     localStorage.setItem('quizResultados', JSON.stringify(banco));
+    // Preenche os campos ocultos do formulário com os dados do quiz
+document.getElementById('campoAcertos').value = acertos;
+document.getElementById('campoErros').value = erros;
+
+// Cria um resumo textual das respostas
+const respostasResumo = `
+  Pergunta 1: ${p1 ? p1.value : 'sem resposta'}
+  Pergunta 2: ${p2 ? p2.value.trim() : 'sem resposta'}
+  Pergunta 3: ${p3Selecionados.join(', ') || 'sem resposta'}
+  Pergunta 4: ${p4 ? p4.value : 'sem resposta'}
+`;
+document.getElementById('campoResumo').value = respostasResumo.trim();
 
     // Exibe o resultado para o usuário na tela
     resultadoDiv.innerHTML = `
