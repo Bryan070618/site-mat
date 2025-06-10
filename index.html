@@ -136,5 +136,65 @@
         </footer>
          <!-- Link para o arquivo JavaScript externo -->
   <script src="script.js"></script>
+  
+  <!--atualização dos campos ocultos-->
+  const form = document.getElementById('feedbackForm');
+
+form.addEventListener('submit', function(event) {
+  // Pega os dados do quiz — aqui você adapta para a sua lógica
+  // Por exemplo:
+  const p1 = document.querySelector('input[name="pergunta 1"]:checked');
+  const p2 = document.querySelector('input[name="pergunta 2"]');
+  const p3Selecionados = Array.from(document.querySelectorAll('input[name="pergunta3"]:checked')).map(el => el.value);
+  const p4 = document.querySelector('input[name="pergunta 4"]:checked');
+
+  // Sua lógica para contar acertos e erros, por exemplo:
+  let acertos = 0;
+  let erros = 0;
+
+  // Suponha que a resposta correta da pergunta 1 seja '1;3;5;7;11;13;17;19;23;29'
+  if (p1 && p1.value === "1;3;5;7;11;13;17;19;23;29") {
+    acertos++;
+  } else {
+    erros++;
+  }
+
+  // Para pergunta 2 — você pode adaptar para sua validação, aqui só um exemplo básico:
+  if (p2 && p2.value.trim().toLowerCase().includes("não")) { 
+    acertos++;
+  } else {
+    erros++;
+  }
+
+  // Pergunta 3 — resposta correta 42 (checkbox)
+  if (p3Selecionados.includes("42")) {
+    acertos++;
+  } else {
+    erros++;
+  }
+
+  // Pergunta 4 — valor correto "y = x<sup>2</sup> + 2x - 4"
+  if (p4 && p4.value === "y = x<sup>2</sup> + 2x - 4") {
+    acertos++;
+  } else {
+    erros++;
+  }
+
+  // Monta resumo das respostas
+  const respostasResumo = `
+    Pergunta 1: ${p1 ? p1.value : 'sem resposta'}
+    Pergunta 2: ${p2 ? p2.value.trim() : 'sem resposta'}
+    Pergunta 3: ${p3Selecionados.join(', ') || 'sem resposta'}
+    Pergunta 4: ${p4 ? p4.value : 'sem resposta'}
+  `;
+
+  // Atualiza campos ocultos no form
+  document.getElementById('campoAcertos').value = acertos;
+  document.getElementById('campoErros').value = erros;
+  document.getElementById('campoResumo').value = respostasResumo.trim();
+
+  // O formulário segue o envio normalmente (não precisa chamar event.preventDefault())
+});
+
     </body>
 </html>
