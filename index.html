@@ -124,6 +124,112 @@
             <p>Quiz de programação. Todos os direitos reservados.</p>
             <p>Para conhecer outros quizzes <a href="https://google.com" target="_blank">clique aqui.</a> </p>
         </footer>
+<<<<<<< HEAD
+        <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Gabarito: chave = name da pergunta, valor = resposta correta
+  // Para checkbox, pode ser array de valores corretos.
+  const gabarito = {
+    'pergunta 1': '1;3;5;7;11;13;17;19;23;29',
+    'pergunta 2': 'não, pois é divisível por 7 e por 13 além de 1 e 91',
+    'pergunta3': ['42'], // checkbox, só 42 é correto
+    'pergunta 4': 'y = x<sup>2</sup> + 2x - 4'
+  };
+
+  // Função para normalizar texto (resposta aberta)
+  function normalizeText(text) {
+    return text.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  // Criar botão para enviar respostas e inserir o campo email
+  const main = document.querySelector('main');
+
+  // Criar form para finalização e email
+  const resultadoSection = document.createElement('section');
+  resultadoSection.innerHTML = `
+    <h2>Finalize seu Quiz</h2>
+    <label for="emailUser">Digite seu email para salvar seu resultado:</label><br>
+    <input type="email" id="emailUser" required placeholder="seuemail@exemplo.com"><br><br>
+    <button id="btnEnviar">Enviar Respostas</button>
+    <div id="resultadoFinal" style="margin-top: 20px;"></div>
+  `;
+  main.appendChild(resultadoSection);
+
+  const btnEnviar = document.getElementById('btnEnviar');
+  const emailInput = document.getElementById('emailUser');
+  const resultadoDiv = document.getElementById('resultadoFinal');
+
+  btnEnviar.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const email = emailInput.value.trim().toLowerCase();
+    if (!email || !email.includes('@')) {
+      alert('Por favor, digite um email válido.');
+      return;
+    }
+
+    let acertos = 0;
+    let erros = 0;
+
+    // Pergunta 1 (radio)
+    const p1 = document.querySelector('input[name="pergunta 1"]:checked');
+    if (p1) {
+      if (p1.value === gabarito['pergunta 1']) acertos++;
+      else erros++;
+    } else erros++;
+
+    // Pergunta 2 (texto)
+    const p2 = document.querySelector('input[name="pergunta 2"]');
+    if (p2 && p2.value.trim() !== '') {
+      // comparação simples normalizada
+      if (normalizeText(p2.value) === normalizeText(gabarito['pergunta 2'])) acertos++;
+      else erros++;
+    } else erros++;
+
+    // Pergunta 3 (checkbox)
+    const p3Checkboxes = document.querySelectorAll('input[name="pergunta3"]');
+    const p3Selecionados = [];
+    p3Checkboxes.forEach(cb => {
+      if (cb.checked) p3Selecionados.push(cb.value);
+    });
+    // verificar se somente '42' está selecionado
+    if (
+      p3Selecionados.length === gabarito['pergunta3'].length &&
+      p3Selecionados.every(v => gabarito['pergunta3'].includes(v))
+    ) acertos++;
+    else erros++;
+
+    // Pergunta 4 (radio)
+    const p4 = document.querySelector('input[name="pergunta 4"]:checked');
+    if (p4) {
+      if (p4.value.replace(/\s+/g, '') === gabarito['pergunta 4'].replace(/\s+/g, '')) acertos++;
+      else erros++;
+    } else erros++;
+
+    // Salvar no localStorage
+    // Estrutura: { email: {acertos, erros, data} }
+    const resultado = {
+      acertos,
+      erros,
+      data: new Date().toLocaleString()
+    };
+
+    let banco = JSON.parse(localStorage.getItem('quizResultados') || '{}');
+    banco[email] = resultado;
+    localStorage.setItem('quizResultados', JSON.stringify(banco));
+
+    // Mostrar resultado para usuário
+    resultadoDiv.innerHTML = `
+      <p><strong>Resultado para ${email}</strong></p>
+      <p>Acertos: ${acertos}</p>
+      <p>Erros: ${erros}</p>
+      <p>Seu resultado foi salvo com sucesso!</p>
+    `;
+  });
+});
+</script>
+
+=======
          <script>
 document.addEventListener('DOMContentLoaded', () => {
   // Gabarito: chave = name da pergunta, valor = resposta correta
@@ -228,5 +334,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+>>>>>>> 1e36ddc281bf87b51babfab3fc64f3975c8a8b90
     </body>
 </html>
