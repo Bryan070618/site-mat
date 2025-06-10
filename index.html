@@ -102,22 +102,35 @@
             </section>
             <!--Formulário de Feedback-->
             <section>
+                <!-- Formulário de Feedback -->
+            <section>
                 <h2>Nos dê o seu feedback</h2>
-                <fieldset> <!--tag borda do formulario-->
-                    <legend>informações de contato</legend><!--tag de legenda-->
-                <form> <!--tag para formulario-->
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name"><br>
-                    <label for="email">email:</label>
-                    <input type="email" id="email" name="email"><br>
-                    <!--tags e atributos para caixa de texto-->
-                    <label for="comentario">comentario</label><br>
-                    <textarea id="comentarios" 
-                    name="comentarios" rows="4" cols="50"
-                    placeholder="Digite seus comentários aqui"></textarea>
-                    <button onclick="alert('Feeedback enviado')">Envie o seu feedback</button>
-                </form>
-                </fieldset>
+        <fieldset> <!--tag borda do formulario-->
+                <legend>informações de contato</legend> <!--tag de legenda-->
+
+                <!--tag para formulario com integração ao Formspree-->
+            <form action="https://formspree.io/f/mjkrydnl" method="POST">
+      
+                <!--campo de texto para nome-->
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="nome" required><br>
+      
+                <!--campo de email-->
+                <label for="email">email:</label>
+                <input type="email" id="email" name="_replyto" required><br>
+
+                <!--tags e atributos para caixa de texto-->
+                <label for="comentario">comentario</label><br>
+                <textarea id="comentario" 
+                 name="comentario" rows="4" cols="50"
+                placeholder="Digite seus comentários aqui" required></textarea><br>
+
+                <!--botão de envio do formulário-->
+                <button type="submit">Envie o seu feedback</button>
+            </form>
+        </fieldset>
+</section>
+
             </section>
         </main>
         <footer> <!--rodapé-->
