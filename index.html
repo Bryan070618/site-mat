@@ -1,204 +1,163 @@
 <!DOCTYPE html>
-<html>
-     <head> <!--tag méta dados-->
-        <link rel="stylesheet" href="style.css">
-        <title>Quiz matematica basica</title>
-        <meta name="description" content="um quiz interativo para testar seus conhecimentos em matematica">
-     </head>
-    <body> <!--tag parte visual-->
-        <header>
-            <!--cabeçalho-->
-            <h1>Quiz interativo para alunos de matemática CEAK</h1>
-            <p>Teste seus conhecimentos em matemática e veja qual pontuação você consegue fazer!</p>
-        </header>
-        <main> <!--tag conteúdo principal-->
-            <!--Essa seção é para a introdução-->
-            <section>
-                <h2>Sobre esse quiz</h2>
-                <p>Este quiz foi desenvolvido para testar seus conhecimentos em matemática básica, e é composto por uma série de perguntas envolvendo conceitos básicos de <strong>aritmética, algebra e geometria</strong></p>
-                <p>você ira relembrar o conceito de <abbr title="minimo multiplo comum">MMC</abbr> <abbr title="máximo divisor comum">MDC</abbr> dentre outros conceitos básicos de operações numéricas fundamentais na aritmética</p>
-                <p>Você ira responder o maximo de perguntas que conseguir a respeito de cada <em>conceito matemático</em> e ao final verá qual a sua pontuação e nivel de conhecimento em matemática</p>
-            </section>
-            <!--perguntas-->
-            <section>
-                <!--pergunta multipla escolha 1-->
-                <h2>Pergunta 1: Quais são os dez primeiros números primos?</h2>
-                <form >
-                    <input type="radio" value="1;3;5;7;11;13;17;19;23;29" id="p1a" name="pergunta 1">
-                    <label for="p1a">1;3;5;7;11;13;17;19;23;29</label><br>
-                    <input type="radio" value="1;3;5;7;11;13;17;19;23;27" id="p1b" name="pergunta 1">
-                    <label for="p1b">1;3;5;7;12;13;17;19;23;27</label><br>
-                    <input type="radio" value="1;3;5;7;11;13;17;21;23;27" id="p1c" name="pergunta 1">
-                    <label for="p1c">1;3;5;7;12;13;17;21;23;27</label><br>
-                </form>
-            </section>
-            <section>
-                <!--pergunta texto 2-->
-                <h2>Pergunta 2: 
-                  91 é um número primo?explique.</h2>
-                <form >
-                    <input type="text" id="p2" name="pergunta 2" placeholder="digite aqui sua resposta">
-                </form>
-            </section>
-             <section>
-            <!--Pergunta seleção multipla 3-->
-            <h2>Pergunta 3: Qual é o <abbr title="Minimo Multiplo Comum">MMC</abbr> entre o numero 3 e o 21</h2>
-            <form>
-                <input type="checkbox" id="p3a" name="pergunta3" value="24">
-                <label for="p3a">24</label><br>
-                <input type="checkbox" id="p3b" name="pergunta3" value="33">
-                <label for="p3b">33</label><br>
-                <input type="checkbox" id="p3c" name="pergunta3" value="42">
-                <label for="p3c">42</label><br>
-            </form>
-            </section>
-            <section>
-                <!--pergunta 4 com imagem-->
-                <h2> Pergunta 4: Qual função melhor representa o grafico a seguir?</h2>
-                <img src="./assets/Captura de tela 2025-04-19 150217.png" alt="">
-                <!--respostas em espressões algébricas-->
-                <form> 
-                    <input type="radio" value="y = x<sup>2</sup> + 2x + 4 " id="p4a" name="pergunta 4">
-                    <label for="p4a">y = x<sup>2</sup> + 2x + 4</label><br>
-                    <input type="radio" value="y = x<sup>2</sup> + 2x - 4" id="p4b" name="pergunta 4">
-                    <label for="p4b">y = x<sup>2</sup> + 2x - 4</label><br>
-                    <input type="radio" value="y = x<sup>2</sup> + x + 4" id="p4c" name="pergunta 4">
-                    <label for="p4c">y = x<sup>2</sup> + x + 4</label><br>
-                </form>  
-            </section>
-            <!--Tabela de pontuação-->
-        <section>
-            <h2>Tabela de Pontuação</h2>
-            <table border="1"> <!--tag para criar tabela-->
-                <thead> <!--cabeçalho de tabela-->
-                    <th>Pontuação</th>
-                    <th>Avaliação</th>
-                </thead>
-                <tr> <!--tag cédula da tabela-->
-                    <td>0-2</td>
-                    <td>Não desista! Cada tentativa é uma oportunidade de você aprender</td>
-                </tr>
-                <tr>
-                    <td>3-6</td>
-                    <td>Parabéns! você foi bem mas pode melhorar</td>
-                </tr>
-                 <tr>
-                    <td>7-10</td>
-                    <td>Parabéns! você é incrivel</td>
-                </tr>
-            </table>
-        </section>
-        
-        <!--lista de respostas ligada ao script.js-->
-        <section>
-            <h2>verifique suas respostas</h2>
-            <details> <!--tag para esconder informações-->
-            <summary>Clique aqui para ver as respostas</summary>
-            <ol>
-                <li>1;3;5;7;11;13;17;19;23;29</li>
-                <li>Não, pois é divisivel por 7 e por 13 além de 1 e 91</li>
-                <li>42</li>
-                <li>Equação: x<sup>2</sup> + 2x - 4</li>
-            </ol>
-            </details>
-        </section>
-            <!--feedback do usuario-->
-            <section>
-                <h2>Nos dê o seu feedback</h2>
-         <fieldset>
-                <legend>Informações de contato</legend>
-            <!-- Formulário com integração ao Formspree -->
-                <form id="feedbackForm" action="https://formspree.io/f/mjkrydnl" method="POST">
-            <!-- Nome -->
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="nome" required><br>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz matemática básica</title>
+  <meta name="description" content="um quiz interativo para testar seus conhecimentos em matematica" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Quiz interativo para alunos de matemática CEAK</h1>
+    <p>Teste seus conhecimentos em matemática e veja qual pontuação você consegue fazer!</p>
+  </header>
 
-            <!-- Email -->
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="_replyto" required><br>
+  <main>
+    <section>
+      <h2>Sobre esse quiz</h2>
+      <p>Este quiz foi desenvolvido para testar seus conhecimentos em matemática básica, e é composto por uma série de perguntas envolvendo conceitos básicos de <strong>aritmética, álgebra e geometria</strong></p>
+      <p>Você irá relembrar o conceito de <abbr title="mínimo múltiplo comum">MMC</abbr> e <abbr title="máximo divisor comum">MDC</abbr>, dentre outros conceitos básicos de operações numéricas fundamentais na aritmética.</p>
+      <p>Você responderá o máximo de perguntas que conseguir a respeito de cada <em>conceito matemático</em> e ao final verá qual a sua pontuação e nível de conhecimento em matemática.</p>
+    </section>
 
-      <!-- Comentário -->
-      <label for="comentario">Comentário:</label><br>
-      <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Digite seus comentários aqui" required></textarea><br>
+    <form id="quizForm" action="https://formspree.io/f/mjkrydnl" method="POST">
+      <section>
+        <h2>Pergunta 1: Quais são os dez primeiros números primos?</h2>
+        <label><input type="radio" name="pergunta1" value="1;3;5;7;11;13;17;19;23;29" required> 1;3;5;7;11;13;17;19;23;29</label><br>
+        <label><input type="radio" name="pergunta1" value="1;3;5;7;11;13;17;19;23;27"> 1;3;5;7;12;13;17;19;23;27</label><br>
+        <label><input type="radio" name="pergunta1" value="1;3;5;7;11;13;17;21;23;27"> 1;3;5;7;12;13;17;21;23;27</label><br>
+      </section>
 
-      <!-- CAMPOS OCULTOS: resultados do quiz -->
-      <input type="hidden" id="campoAcertos" name="Acertos">
-      <input type="hidden" id="campoErros" name="Erros">
-      <input type="hidden" id="campoResumo" name="Resumo_das_respostas">
+      <section>
+        <h2>Pergunta 2: 91 é um número primo? Explique.</h2>
+        <input type="text" id="p2" name="pergunta2" placeholder="Digite aqui sua resposta" required />
+      </section>
 
-      <!-- Botão de envio -->
-      <button type="submit">Envie o seu feedback</button>
+      <section>
+        <h2>Pergunta 3: Qual é o <abbr title="mínimo múltiplo comum">MMC</abbr> entre o número 3 e o 21?</h2>
+        <label><input type="checkbox" name="pergunta3" value="24"> 24</label><br>
+        <label><input type="checkbox" name="pergunta3" value="33"> 33</label><br>
+        <label><input type="checkbox" name="pergunta3" value="42"> 42</label><br>
+      </section>
+
+      <section>
+        <h2>Pergunta 4: Qual função melhor representa o gráfico a seguir?</h2>
+        <img src="./assets/Captura de tela 2025-04-19 150217.png" alt="Gráfico da questão 4" />
+        <label><input type="radio" name="pergunta4" value="y = x² + 2x + 4" required> y = x² + 2x + 4</label><br>
+        <label><input type="radio" name="pergunta4" value="y = x² + 2x - 4"> y = x² + 2x - 4</label><br>
+        <label><input type="radio" name="pergunta4" value="y = x² + x + 4"> y = x² + x + 4</label><br>
+      </section>
+
+      <section>
+        <h2>Tabela de Pontuação</h2>
+        <table border="1">
+          <thead>
+            <tr><th>Pontuação</th><th>Avaliação</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0-2</td><td>Não desista! Cada tentativa é uma oportunidade de você aprender</td></tr>
+            <tr><td>3-6</td><td>Parabéns! Você foi bem, mas pode melhorar</td></tr>
+            <tr><td>7-10</td><td>Parabéns! Você é incrível</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Verifique suas respostas</h2>
+        <details>
+          <summary>Clique aqui para ver as respostas</summary>
+          <ol>
+            <li>1;3;5;7;11;13;17;19;23;29</li>
+            <li>Não, pois é divisível por 7 e por 13 além de 1 e 91</li>
+            <li>42</li>
+            <li>Equação: x² + 2x - 4</li>
+          </ol>
+        </details>
+      </section>
+
+      <section>
+        <h2>Nos dê o seu feedback</h2>
+        <fieldset>
+          <legend>Informações de contato</legend>
+
+          <label for="name">Nome:</label><br>
+          <input type="text" id="name" name="nome" required /><br>
+
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="_replyto" required /><br>
+
+          <label for="comentario">Comentário:</label><br>
+          <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Digite seus comentários aqui" required></textarea><br>
+
+          <!-- Campos ocultos preenchidos via JS -->
+          <input type="hidden" id="campoAcertos" name="Acertos" />
+          <input type="hidden" id="campoErros" name="Erros" />
+          <input type="hidden" id="campoResumo" name="Resumo_das_respostas" />
+
+          <button type="button" onclick="processarEEnviar()">Enviar respostas e feedback</button>
+        </fieldset>
+      </section>
     </form>
-  </fieldset>
-         </section>
-        </main>
-        <footer> <!--rodapé-->
-            <p>Quiz de programação. Todos os direitos reservados.</p>
-            <p>Para conhecer outros quizzes <a href="https://flgferas.github.io/sitenovoleo/" target="_blank">clique aqui.</a> </p>
-        </footer>
-         <!-- Link para o arquivo JavaScript externo -->
-  <script src="script.js"></script>
+  </main>
 
-  <!--atualização dos campos ocultos-->
-<script>
-  const form = document.getElementById('feedbackForm');
+  <footer>
+    <p>Quiz de programação. Todos os direitos reservados.</p>
+    <p>Para conhecer outros quizzes <a href="https://flgferas.github.io/sitenovoleo/" target="_blank" rel="noopener noreferrer">clique aqui.</a></p>
+  </footer>
 
-form.addEventListener('submit', function(event) {
-  // Pega os dados do quiz — aqui você adapta para a sua lógica
-  // Por exemplo:
-  const p1 = document.querySelector('input[name="pergunta 1"]:checked');
-  const p2 = document.querySelector('input[name="pergunta 2"]');
-  const p3Selecionados = Array.from(document.querySelectorAll('input[name="pergunta3"]:checked')).map(el => el.value);
-  const p4 = document.querySelector('input[name="pergunta 4"]:checked');
+  <script>
+    function processarEEnviar() {
+      const form = document.getElementById('quizForm');
 
-  // Sua lógica para contar acertos e erros, por exemplo:
-  let acertos = 0;
-  let erros = 0;
+      // Captura as respostas
+      const p1 = form.querySelector('input[name="pergunta1"]:checked');
+      const p2 = form.querySelector('input[name="pergunta2"]') || form.querySelector('textarea[name="pergunta2"]') || form.querySelector('input[name="pergunta2"]');
+      const p2valor = form.elements['pergunta2'].value.trim().toLowerCase();
+      const p3selecionados = Array.from(form.querySelectorAll('input[name="pergunta3"]:checked')).map(el => el.value);
+      const p4 = form.querySelector('input[name="pergunta4"]:checked');
 
-  // Suponha que a resposta correta da pergunta 1 seja '1;3;5;7;11;13;17;19;23;29'
-  if (p1 && p1.value === "1;3;5;7;11;13;17;19;23;29") {
-    acertos++;
-  } else {
-    erros++;
-  }
+      // Gabarito
+      const gabarito = {
+        pergunta1: "1;3;5;7;11;13;17;19;23;29",
+        pergunta2: "não", // Checagem básica contendo a palavra 'não'
+        pergunta3: "42",
+        pergunta4: "y = x² + 2x - 4"
+      };
 
-  // Para pergunta 2 — você pode adaptar para sua validação, aqui só um exemplo básico:
-  if (p2 && p2.value.trim().toLowerCase().includes("não")) { 
-    acertos++;
-  } else {
-    erros++;
-  }
+      // Validação simples e contagem
+      let acertos = 0;
+      let erros = 0;
 
-  // Pergunta 3 — resposta correta 42 (checkbox)
-  if (p3Selecionados.includes("42")) {
-    acertos++;
-  } else {
-    erros++;
-  }
+      // Pergunta 1 (radio)
+      if (p1 && p1.value === gabarito.pergunta1) acertos++; else erros++;
 
-  // Pergunta 4 — valor correto "y = x<sup>2</sup> + 2x - 4"
-  if (p4 && p4.value === "y = x<sup>2</sup> + 2x - 4") {
-    acertos++;
-  } else {
-    erros++;
-  }
+      // Pergunta 2 (texto) - considera resposta correta se contiver "não"
+      if (p2valor.includes(gabarito.pergunta2)) acertos++; else erros++;
 
-  // Monta resumo das respostas
-  const respostasResumo = `
-    Pergunta 1: ${p1 ? p1.value : 'sem resposta'}
-    Pergunta 2: ${p2 ? p2.value.trim() : 'sem resposta'}
-    Pergunta 3: ${p3Selecionados.join(', ') || 'sem resposta'}
-    Pergunta 4: ${p4 ? p4.value : 'sem resposta'}
-  `;
+      // Pergunta 3 (checkbox) - correta se selecionar 42 entre as opções marcadas
+      if (p3selecionados.includes(gabarito.pergunta3)) acertos++; else erros++;
 
-  // Atualiza campos ocultos no form
-  document.getElementById('campoAcertos').value = acertos;
-  document.getElementById('campoErros').value = erros;
-  document.getElementById('campoResumo').value = respostasResumo.trim();
+      // Pergunta 4 (radio)
+      if (p4 && p4.value === gabarito.pergunta4) acertos++; else erros++;
 
-  // O formulário segue o envio normalmente (não precisa chamar event.preventDefault())
-});
-</script>
+      // Resumo das respostas
+      const resumo =
+        `Pergunta 1: ${p1 ? p1.value : 'sem resposta'}\n` +
+        `Pergunta 2: ${form.elements['pergunta2'].value.trim() || 'sem resposta'}\n` +
+        `Pergunta 3: ${p3selecionados.length > 0 ? p3selecionados.join(', ') : 'sem resposta'}\n` +
+        `Pergunta 4: ${p4 ? p4.value : 'sem resposta'}`;
 
-    </body>
+      // Preenche campos ocultos
+      document.getElementById('campoAcertos').value = acertos;
+      document.getElementById('campoErros').value = erros;
+      document.getElementById('campoResumo').value = resumo;
+
+      // Alerta com pontuação
+      alert(`Você acertou ${acertos} de 4 perguntas.`);
+
+      // Envia o formulário
+      form.submit();
+    }
+  </script>
+</body>
 </html>
